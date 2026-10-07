@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terraballant</title>
+    <style>
+        /* All visual formatting rules stay perfectly identical to protect design unity */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; align-items: center; overflow-x: hidden; }
+        header { width: 100%; max-width: 1200px; padding: 40px 20px 20px 20px; display: flex; justify-content: flex-start; align-items: center; z-index: 10; }
+        .language-selector { display: flex; gap: 20px; }
+        .language-selector a { color: #94a3b8; text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s, border-color 0.2s; padding-bottom: 2px; border-bottom: 2px solid transparent; }
+        .language-selector a.active { color: #000000; border-color: #000000; }
+        .language-selector a:hover { color: #475569; }
+        .frame-container { width: 90%; max-width: 1100px; height: 60vh; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); display: flex; justify-content: center; align-items: center; background-color: #f1f5f9; }
+        .slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; list-style: none; z-index: 1; }
+        .slideshow div { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-size: cover; background-position: center; background-repeat: no-repeat; opacity: 0; animation: imageAnimation 18s linear infinite; }
+        /* Note the '../' prefix: This lets the folder reach back out to find your main image files */
+        .slideshow div:nth-child(1) { background-image: url('../bg1.jpg'); animation-delay: 0s; }
+        .slideshow div:nth-child(2) { background-image: url('../bg2.jpg'); animation-delay: 6s; }
+        .slideshow div:nth-child(3) { background-image: url('../bg3.jpg'); animation-delay: 12s; }
+        @keyframes imageAnimation { 0% { opacity: 0; animation-timing-function: ease-in; } 8% { opacity: 1; animation-timing-function: ease-out; } 33% { opacity: 1; } 41% { opacity: 0; } 100% { opacity: 0; } }
+        .frame-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.04); z-index: 2; }
+        .button-group { position: relative; z-index: 3; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; padding: 0 20px; }
+        .btn { display: inline-block; background-color: #ffffff; color: #1e293b; padding: 16px 36px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(0,0,0,0.08); white-space: nowrap; }
+        .btn:hover { background-color: #f8fafc; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+        footer { width: 100%; padding: 40px 20px; text-align: center; z-index: 10; }
+        .instagram-link { color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; transition: color 0.2s; }
+        .instagram-link:hover { color: #000000; }
+        @media (max-width: 768px) { .button-group { gap: 15px; } .btn { padding: 14px 28px; font-size: 0.85rem; } }
+        @media (max-width: 600px) { .frame-container { height: 45vh; width: 95%; } .button-group { flex-direction: column; width: 80%; } .btn { text-align: center; width: 100%; } header { justify-content: center; padding-top: 25px; } }
+    </style>
+</head>
+<body>
+
+    <!-- Language Links Adjusted For Current Context Hierarchy -->
+    <header>
+        <div class="language-selector">
+            <a href="../index.html" title="Català">Català</a>
+            <a href="index.html" class="active" title="Español">Castellano</a>
+            <a href="../en/index.html" title="English">English</a>
+        </div>
+    </header>
+
+    <main class="frame-container">
+        <div class="slideshow">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="frame-overlay"></div>
+
+        <!-- Buttons fully translated to Spanish -->
+        <div class="button-group">
+            <a href="historia.html" class="btn">Nuestra Historia</a>
+            <a href="vino.html" class="btn">Vino</a>
+            <a href="contacto.html" class="btn">Contacto</a>
+        </div>
+    </main>
+
+    <footer>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="instagram-link">@terra_ballant</a>
+    </footer>
+
+</body>
+</html>
 
