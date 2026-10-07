@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terraballant</title>
     <style>
-        /* All visual formatting rules stay perfectly identical to protect design unity */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; align-items: center; overflow-x: hidden; }
         header { width: 100%; max-width: 1200px; padding: 40px 20px 20px 20px; display: flex; justify-content: flex-start; align-items: center; z-index: 10; }
@@ -16,7 +15,6 @@
         .frame-container { width: 90%; max-width: 1100px; height: 60vh; position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); display: flex; justify-content: center; align-items: center; background-color: #f1f5f9; }
         .slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; list-style: none; z-index: 1; }
         .slideshow div { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-size: cover; background-position: center; background-repeat: no-repeat; opacity: 0; animation: imageAnimation 18s linear infinite; }
-        /* Note the '../' prefix: This lets the folder reach back out to find your main image files */
         .slideshow div:nth-child(1) { background-image: url('../bg1.jpg'); animation-delay: 0s; }
         .slideshow div:nth-child(2) { background-image: url('../bg2.jpg'); animation-delay: 6s; }
         .slideshow div:nth-child(3) { background-image: url('../bg3.jpg'); animation-delay: 12s; }
@@ -33,16 +31,13 @@
     </style>
 </head>
 <body>
-
-    <!-- Language Links Adjusted For Current Context Hierarchy -->
     <header>
         <div class="language-selector">
-            <a href="../index.html" title="Català">Català</a>
+            <a href="../" title="Català">Català</a>
             <a href="../es/index.html" title="Español">Castellano</a>
             <a href="index.html" class="active" title="English">English</a>
         </div>
     </header>
-
     <main class="frame-container">
         <div class="slideshow">
             <div></div>
@@ -50,19 +45,14 @@
             <div></div>
         </div>
         <div class="frame-overlay"></div>
-
-        <!-- Buttons fully translated to English -->
         <div class="button-group">
             <a href="story.html" class="btn">Our Story</a>
             <a href="wine.html" class="btn">Wine</a>
             <a href="contact.html" class="btn">Contact</a>
         </div>
     </main>
-
     <footer>
         <a href="https://instagram.com" target="_blank" rel="noopener" class="instagram-link">@terra_ballant</a>
     </footer>
-
 </body>
 </html>
-
