@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terraballant | Viticulture & Wine</title>
+    <title>Terraballant</title>
     <style>
-        :root {
-            --text-main: #ffffff; 
-            --text-muted: #e2e8f0;
-            --accent: #fcd34d; /* Warm golden-wine tone */
-            --accent-hover: #fef08a;
-            --overlay: rgba(15, 23, 42, 0.65); /* Keeps text perfectly readable over images */
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -20,22 +12,73 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: var(--text-main);
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #ffffff; /* Background outside the photos is solid white */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             overflow-x: hidden;
-            background-color: #0f172a;
         }
 
-        /* --- Full Screen Background Slideshow (Optimized for 3 Images) --- */
+        /* --- Top Navigation / Language Flags --- */
+        header {
+            width: 100%;
+            max-width: 1200px;
+            padding: 30px 20px;
+            display: flex;
+            justify-content: flex-start; /* Keeps flags locked to the top left corner */
+            align-items: center;
+            z-index: 10;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 15px;
+        }
+
+        .language-selector a {
+            display: inline-block;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .language-selector a:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        .flag-icon {
+            width: 32px;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+        }
+
+        /* --- Widescreen Image Container --- */
+        .frame-container {
+            width: 90%;
+            max-width: 1100px;
+            height: 60vh; /* Keeps it balanced in a widescreen frame */
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- Background Slideshow Loop Inside the Frame --- */
         .slideshow {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -2;
+            width: 100%;
+            height: 100%;
             list-style: none;
+            z-index: 1;
         }
 
         .slideshow li {
@@ -48,16 +91,14 @@
             background-position: center;
             background-repeat: no-repeat;
             opacity: 0;
-            z-index: -2;
-            animation: imageAnimation 18s linear infinite; /* Total loop: 18 seconds (6s per image) */
+            animation: imageAnimation 18s linear infinite; /* 3 images * 6s each */
         }
 
-        /* Assigning your 3 uploaded background images */
+        /* Assigning your background files */
         .slideshow li:nth-child(1) { background-image: url('bg1.jpg'); animation-delay: 0s; }
         .slideshow li:nth-child(2) { background-image: url('bg2.jpg'); animation-delay: 6s; }
         .slideshow li:nth-child(3) { background-image: url('bg3.jpg'); animation-delay: 12s; }
 
-        /* Smooth cross-fade animation math optimized for 3 items */
         @keyframes imageAnimation { 
             0% { opacity: 0; animation-timing-function: ease-in; }
             8% { opacity: 1; animation-timing-function: ease-out; }
@@ -66,147 +107,115 @@
             100% { opacity: 0; }
         }
 
-        /* Dark tint overlay layer to keep text crisp and accessible */
-        .overlay-layer {
-            position: fixed;
+        /* Darkening overlay inside the frame to keep text/buttons punchy */
+        .frame-overlay {
+            position: absolute;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: var(--overlay);
-            z-index: -1;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.25);
+            z-index: 2;
         }
 
-        /* --- Interface Design --- */
-        header {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 30px 20px;
+        /* --- Centered Action Buttons --- */
+        .button-group {
+            position: relative;
+            z-index: 3; /* Places buttons directly on top of the images */
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--text-main);
-            text-decoration: none;
-            letter-spacing: -0.05em;
-            text-transform: lowercase;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 500;
-            transition: color 0.2s;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        main {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-            min-height: calc(100vh - 200px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .hero {
-            max-width: 650px;
-            padding: 40px 0;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 20px;
-            letter-spacing: -0.03em;
-            text-shadow: 0 4px 12px rgba(0,0,0,0.6);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            color: var(--text-muted);
-            margin-bottom: 35px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+            gap: 25px;
         }
 
         .btn {
             display: inline-block;
-            background-color: var(--accent);
-            color: #000000;
-            padding: 14px 28px;
+            background-color: #ffffff;
+            color: #1e293b;
+            padding: 16px 36px;
             border-radius: 8px;
             text-decoration: none;
+            font-size: 1rem;
             font-weight: 600;
-            transition: background-color 0.2s, transform 0.1s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
         .btn:hover {
-            background-color: var(--accent-hover);
+            background-color: #f8fafc;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
 
+        /* --- Footer / Instagram Link --- */
         footer {
-            max-width: 1100px;
-            margin: 0 auto;
+            width: 100%;
             padding: 40px 20px;
             text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        .instagram-link {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+
+        .instagram-link:hover {
+            color: #000000; /* Darkens sharply to highlight interaction */
         }
 
         @media (max-width: 600px) {
-            .hero h1 { font-size: 2.5rem; }
-            header { flex-direction: column; gap: 15px; }
-            nav a { margin: 0 10px; }
+            .frame-container { height: 50vh; width: 95%; }
+            .button-group { flex-direction: column; gap: 15px; width: 80%; }
+            .btn { text-align: center; width: 100%; }
+            header { justify-content: center; } /* Centers flags nicely on mobile viewports */
         }
     </style>
 </head>
 <body>
 
-    <!-- Background Slider Elements (Only 3 List Items Now) -->
-    <ul class="slideshow">
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <div class="overlay-layer"></div>
-
+    <!-- Top Left Header Layer (Language Toggles) -->
     <header>
-        <a href="#" class="logo">terraballant<span>.</span></a>
-        <nav>
-            <a href="#about">Our Story</a>
-            <a href="#vineyards">Vineyards</a>
-            <a href="mailto:sam.maguire111@gmail.com">Contact</a>
-        </nav>
+        <div class="language-selector">
+            <!-- Spanish Flag -->
+            <a href="/es/" title="Español">
+                <img src="https://flagcdn.com" alt="Español" class="flag-icon">
+            </a>
+            <!-- Catalan Flag -->
+            <a href="/ca/" title="Català">
+                <img src="https://flagcdn.com" alt="Català" class="flag-icon">
+            </a>
+            <!-- English Flag -->
+            <a href="/" title="English">
+                <img src="https://flagcdn.com" alt="English" class="flag-icon">
+            </a>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Crafting raw terroir into exceptional wine.</h1>
-            <p>Welcome to Terraballant. Explore our journey from native soils and seasonal budding to the perfect pour.</p>
-            <a href="mailto:sam.maguire111@gmail.com" class="btn">Inquire Online</a>
-        </section>
+    <!-- Main Defined Visual Window Area -->
+    <main class="frame-container">
+        <!-- Visual Loops inside boundary -->
+        <ul class="slideshow">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="frame-overlay"></div>
+
+        <!-- Interactive Core Buttons Split over Center -->
+        <div class="button-group">
+            <a href="story.html" class="btn">Our Story</a>
+            <a href="contact.html" class="btn">Contact</a>
+        </div>
     </main>
 
+    <!-- Base Branding Layer -->
     <footer>
-        <p>&copy; 2026 terraballant.com. All rights reserved.</p>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="instagram-link">@terra_ballant</a>
     </footer>
 
 </body>
