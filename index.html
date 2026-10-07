@@ -26,7 +26,7 @@
         header {
             width: 100%;
             max-width: 1200px;
-            padding: 30px 20px;
+            padding: 40px 20px 20px 20px;
             display: flex;
             justify-content: flex-start; /* Keeps flags locked to the top left corner */
             align-items: center;
@@ -35,7 +35,7 @@
 
         .language-selector {
             display: flex;
-            gap: 15px;
+            gap: 12px;
         }
 
         .language-selector a {
@@ -49,11 +49,12 @@
         }
 
         .flag-icon {
-            width: 32px;
-            height: auto;
+            width: 30px;
+            height: 20px;
             display: block;
-            border-radius: 4px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+            object-fit: cover;
+            border-radius: 3px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
         }
 
         /* --- Widescreen Image Container --- */
@@ -64,10 +65,11 @@
             position: relative;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #f1f5f9; /* Soft fallback gray while images load */
         }
 
         /* --- Background Slideshow Loop Inside the Frame --- */
@@ -94,7 +96,7 @@
             animation: imageAnimation 18s linear infinite; /* 3 images * 6s each */
         }
 
-        /* Assigning your background files */
+        /* Assigning your background files (ensure case-sensitivity matches your repository exactly) */
         .slideshow li:nth-child(1) { background-image: url('bg1.jpg'); animation-delay: 0s; }
         .slideshow li:nth-child(2) { background-image: url('bg2.jpg'); animation-delay: 6s; }
         .slideshow li:nth-child(3) { background-image: url('bg3.jpg'); animation-delay: 12s; }
@@ -114,7 +116,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.25);
+            background: rgba(0, 0, 0, 0.15);
             z-index: 2;
         }
 
@@ -133,18 +135,18 @@
             padding: 16px 36px;
             border-radius: 8px;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
             transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
 
         .btn:hover {
             background-color: #f8fafc;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
         }
 
         /* --- Footer / Instagram Link --- */
@@ -156,42 +158,42 @@
         }
 
         .instagram-link {
-            color: #64748b;
+            color: #94a3b8;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
             letter-spacing: 0.05em;
             transition: color 0.2s;
         }
 
         .instagram-link:hover {
-            color: #000000; /* Darkens sharply to highlight interaction */
+            color: #000000;
         }
 
         @media (max-width: 600px) {
-            .frame-container { height: 50vh; width: 95%; }
+            .frame-container { height: 45vh; width: 95%; }
             .button-group { flex-direction: column; gap: 15px; width: 80%; }
-            .btn { text-align: center; width: 100%; }
-            header { justify-content: center; } /* Centers flags nicely on mobile viewports */
+            .btn { text-align: center; width: 100%; padding: 14px 24px; }
+            header { justify-content: center; padding-top: 25px; } 
         }
     </style>
 </head>
 <body>
 
-    <!-- Top Left Header Layer (Language Toggles) -->
+    <!-- Top Left Header Layer (Language Toggles using stable raw SVG paths) -->
     <header>
         <div class="language-selector">
             <!-- Spanish Flag -->
             <a href="/es/" title="Español">
-                <img src="https://flagcdn.com" alt="Español" class="flag-icon">
+                <img src="https://cloudflare.com" alt="Español" class="flag-icon">
             </a>
             <!-- Catalan Flag -->
             <a href="/ca/" title="Català">
-                <img src="https://flagcdn.com" alt="Català" class="flag-icon">
+                <img src="https://cloudflare.com" alt="Català" class="flag-icon">
             </a>
             <!-- English Flag -->
             <a href="/" title="English">
-                <img src="https://flagcdn.com" alt="English" class="flag-icon">
+                <img src="https://cloudflare.com" alt="English" class="flag-icon">
             </a>
         </div>
     </header>
