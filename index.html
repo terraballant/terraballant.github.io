@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terraballant | Creative Portfolio</title>
+    <title>Terraballant | Viticulture & Wine</title>
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #7dd3fc;
+            --text-main: #ffffff;
+            --text-muted: #e2e8f0;
+            --accent: #fcd34d; /* Warm golden-wine tone */
+            --accent-hover: #fef08a;
+            --overlay: rgba(15, 23, 42, 0.65); /* Keeps text perfectly readable over images */
         }
 
         * {
@@ -22,27 +21,79 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            padding: 0 20px;
+            overflow-x: hidden;
+            background-color: #0f172a;
         }
 
+        /* --- Full Screen Background Slideshow (Optimized for 3 Images) --- */
+        .slideshow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            list-style: none;
+        }
+
+        .slideshow li {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            z-index: -2;
+            animation: imageAnimation 18s linear infinite; /* Total loop: 18 seconds (6s per image) */
+        }
+
+        /* Assigning your 3 uploaded background images */
+        .slideshow li:nth-child(1) { background-image: url('bg1.jpg'); animation-delay: 0s; }
+        .slideshow li:nth-child(2) { background-image: url('bg2.jpg'); animation-delay: 6s; }
+        .slideshow li:nth-child(3) { background-image: url('bg3.jpg'); animation-delay: 12s; }
+
+        /* Smooth cross-fade animation math optimized for 3 items */
+        @keyframes imageAnimation { 
+            0% { opacity: 0; animation-timing-function: ease-in; }
+            8% { opacity: 1; animation-timing-function: ease-out; }
+            33% { opacity: 1; }
+            41% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        /* Dark tint overlay layer to keep text crisp and accessible */
+        .overlay-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: var(--overlay);
+            z-index: -1;
+        }
+
+        /* --- Interface Design --- */
         header {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 0;
+            padding: 30px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.6rem;
+            font-weight: 800;
             color: var(--text-main);
             text-decoration: none;
             letter-spacing: -0.05em;
+            text-transform: lowercase;
         }
 
         .logo span {
@@ -52,9 +103,10 @@
         nav a {
             color: var(--text-muted);
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 25px;
             font-weight: 500;
             transition: color 0.2s;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         nav a:hover {
@@ -62,38 +114,46 @@
         }
 
         main {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
+            padding: 0 20px;
+            min-height: calc(100vh - 200px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .hero {
-            padding: 80px 0;
-            max-width: 700px;
+            max-width: 650px;
+            padding: 40px 0;
         }
 
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.1;
+            line-height: 1.15;
             margin-bottom: 20px;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.6);
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: var(--text-muted);
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
         }
 
         .btn {
             display: inline-block;
             background-color: var(--accent);
-            color: var(--bg-color);
-            padding: 12px 24px;
+            color: #000000;
+            padding: 14px 28px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             transition: background-color 0.2s, transform 0.1s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         .btn:hover {
@@ -101,84 +161,47 @@
             transform: translateY(-2px);
         }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            padding: 60px 0;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(56, 189, 248, 0.2);
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
         footer {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 0 40px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 20px;
             text-align: center;
             color: var(--text-muted);
             font-size: 0.9rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         @media (max-width: 600px) {
             .hero h1 { font-size: 2.5rem; }
-            header { flex-direction: column; gap: 15px; text-align: center; }
+            header { flex-direction: column; gap: 15px; }
             nav a { margin: 0 10px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Background Slider Elements (Only 3 List Items Now) -->
+    <ul class="slideshow">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="overlay-layer"></div>
+
     <header>
         <a href="#" class="logo">terraballant<span>.</span></a>
         <nav>
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
+            <a href="#about">Our Story</a>
+            <a href="#vineyards">Vineyards</a>
             <a href="mailto:sam.maguire111@gmail.com">Contact</a>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <h1>Building digital experiences that matter.</h1>
-            <p>Welcome to Terraballant. This is your brand new workspace hosted entirely on GitHub Pages, built for speed and clean design.</p>
-            <a href="mailto:sam.maguire111@gmail.com" class="btn">Get In Touch</a>
-        </section>
-
-        <section id="projects" class="grid">
-            <div class="card">
-                <h3>Project One</h3>
-                <p>A brief description of your first project, capability, or service. You can change this text anytime inside your GitHub index.html file.</p>
-            </div>
-            <div class="card">
-                <h3>Project Two</h3>
-                <p>A brief description of your second showcase item. Use this space to demonstrate what you can create or offer.</p>
-            </div>
-            <div class="card">
-                <h3>Project Three</h3>
-                <p>A brief description of your third feature. Clean layout blocks make it super easy for visitors to scan your work.</p>
-            </div>
+            <h1>Crafting raw terroir into exceptional wine.</h1>
+            <p>Welcome to Terraballant. Explore our journey from native soils and seasonal budding to the perfect pour.</p>
+            <a href="mailto:sam.maguire111@gmail.com" class="btn">Inquire Online</a>
         </section>
     </main>
 
