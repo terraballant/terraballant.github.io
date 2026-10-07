@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vi | Terraballant</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; align-items: center; overflow-x: hidden; }
+        header { width: 100%; max-width: 1200px; padding: 40px 20px 20px 20px; display: flex; justify-content: flex-start; align-items: center; z-index: 10; }
+        .language-selector { display: flex; gap: 20px; }
+        .language-selector a { color: #94a3b8; text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s, border-color 0.2s; padding-bottom: 2px; border-bottom: 2px solid transparent; }
+        .language-selector a.active { color: #000000; border-color: #000000; }
+        .language-selector a:hover { color: #475569; }
+        
+        /* --- Product Layout Container --- */
+        .frame-container { width: 90%; max-width: 1100px; min-height: 60vh; position: relative; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); background-color: #f8fafc; padding: 50px 40px; border: 1px solid #f1f5f9; }
+        .page-title { font-size: 1.8rem; font-weight: 700; color: #0f172a; margin-bottom: 40px; letter-spacing: -0.02em; text-align: center; text-transform: uppercase; }
+        
+        /* Responsive Grid for bottles */
+        .wine-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; width: 100%; }
+        .wine-card { background: #ffffff; border-radius: 8px; padding: 30px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+        .wine-card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px rgba(0,0,0,0.04); }
+        
+        /* Bottle Placeholder/Image Area */
+        .wine-image-placeholder { width: 100px; height: 200px; background-color: #f1f5f9; margin-bottom: 20px; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        .wine-name { font-size: 1.3rem; font-weight: 700; color: #1e293b; margin-bottom: 8px; }
+        .wine-type { font-size: 0.85rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 15px; }
+        .wine-desc { font-size: 0.95rem; color: #475569; line-height: 1.5; }
+        
+        footer { width: 100%; padding: 40px 20px; text-align: center; z-index: 10; }
+        .instagram-link { color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; transition: color 0.2s; }
+        .instagram-link:hover { color: #000000; }
+        @media (max-width: 600px) { .frame-container { width: 95%; padding: 30px 20px; } header { justify-content: center; padding-top: 25px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="language-selector">
+            <a href="index.html" class="active" title="Català">Català</a>
+            <a href="es/vino.html" title="Español">Castellano</a>
+            <a href="en/wine.html" title="English">English</a>
+        </div>
+    </header>
+    <main class="frame-container">
+        <h1 class="page-title">Els Nostres Vins</h1>
+        <div class="wine-grid">
+            <!-- Wine Item 1 -->
+            <div class="wine-card">
+                <div class="wine-image-placeholder">Vi Negre</div>
+                <h3 class="wine-name">Terraballant Negre</h3>
+                <span class="wine-type">Vi Negre • Varietat Local</span>
+                <p class="wine-desc">Una expressió sincera del nostre terrer. Madurat de manera artesanal per capturar l'essència única del paisatge de l'Anoia.</p>
+            </div>
+            <!-- Wine Item 2 -->
+            <div class="wine-card">
+                <div class="wine-image-placeholder">Vi Blanc</div>
+                <h3 class="wine-name">Terraballant Blanc</h3>
+                <span class="wine-type">Vi Blanc • Fresc i Fruitat</span>
+                <p class="wine-desc">Equilibrat, viu i aromàtic. Nascut de vinyes seleccionades per oferir una claredat fresca a cada copa.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="instagram-link">@terra_ballant</a>
+    </footer>
+</body>
+</html>
 
