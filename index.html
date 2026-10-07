@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: #ffffff; /* Background outside the photos is solid white */
+            background-color: #ffffff;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -22,46 +22,49 @@
             overflow-x: hidden;
         }
 
-        /* --- Top Navigation / Language Flags --- */
+        /* --- Top Navigation / Language Text Labels --- */
         header {
             width: 100%;
             max-width: 1200px;
             padding: 40px 20px 20px 20px;
             display: flex;
-            justify-content: flex-start; /* Keeps flags locked to the top left corner */
+            justify-content: flex-start;
             align-items: center;
             z-index: 10;
         }
 
         .language-selector {
             display: flex;
-            gap: 12px;
+            gap: 20px;
         }
 
         .language-selector a {
-            display: inline-block;
-            transition: transform 0.2s, opacity 0.2s;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.2s, border-color 0.2s;
+            padding-bottom: 2px;
+            border-bottom: 2px solid transparent;
+        }
+
+        /* Highlight Catalan as the primary active language style */
+        .language-selector a.active {
+            color: #000000;
+            border-color: #000000;
         }
 
         .language-selector a:hover {
-            transform: scale(1.1);
-            opacity: 0.8;
-        }
-
-        .flag-icon {
-            width: 30px;
-            height: 20px;
-            display: block;
-            object-fit: cover;
-            border-radius: 3px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+            color: #475569;
         }
 
         /* --- Widescreen Image Container --- */
         .frame-container {
             width: 90%;
             max-width: 1100px;
-            height: 60vh; /* Keeps it balanced in a widescreen frame */
+            height: 60vh;
             position: relative;
             border-radius: 12px;
             overflow: hidden;
@@ -69,7 +72,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f1f5f9; /* Soft fallback gray while images load */
+            background-color: #f1f5f9;
         }
 
         /* --- Background Slideshow Loop Inside the Frame --- */
@@ -83,23 +86,24 @@
             z-index: 1;
         }
 
-        .slideshow li {
+        .slideshow div {
             position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
-            background-size: cover;
+            /* Changed from 'cover' to 'contain' to stop extreme zooming on mismatched dimensions */
+            background-size: contain; 
             background-position: center;
             background-repeat: no-repeat;
             opacity: 0;
-            animation: imageAnimation 18s linear infinite; /* 3 images * 6s each */
+            animation: imageAnimation 18s linear infinite;
         }
 
-        /* Assigning your background files (ensure case-sensitivity matches your repository exactly) */
-        .slideshow li:nth-child(1) { background-image: url('bg1.jpg'); animation-delay: 0s; }
-        .slideshow li:nth-child(2) { background-image: url('bg2.jpg'); animation-delay: 6s; }
-        .slideshow li:nth-child(3) { background-image: url('bg3.jpg'); animation-delay: 12s; }
+        /* Pointing to your uploaded files */
+        .slideshow div:nth-child(1) { background-image: url('bg1.jpg'); animation-delay: 0s; }
+        .slideshow div:nth-child(2) { background-image: url('bg2.jpg'); animation-delay: 6s; }
+        .slideshow div:nth-child(3) { background-image: url('bg3.jpg'); animation-delay: 12s; }
 
         @keyframes imageAnimation { 
             0% { opacity: 0; animation-timing-function: ease-in; }
@@ -109,21 +113,21 @@
             100% { opacity: 0; }
         }
 
-        /* Darkening overlay inside the frame to keep text/buttons punchy */
+        /* Subtle overlay to retain deep clarity behind button text paths */
         .frame-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.15);
+            background: rgba(0, 0, 0, 0.08);
             z-index: 2;
         }
 
         /* --- Centered Action Buttons --- */
         .button-group {
             position: relative;
-            z-index: 3; /* Places buttons directly on top of the images */
+            z-index: 3;
             display: flex;
             gap: 25px;
         }
@@ -180,38 +184,29 @@
 </head>
 <body>
 
-    <!-- Top Left Header Layer (Language Toggles using stable raw SVG paths) -->
+    <!-- Top Left Header Layer (Clean Minimal Text Language Toggles) -->
     <header>
         <div class="language-selector">
-            <!-- Spanish Flag -->
-            <a href="/es/" title="Español">
-                <img src="https://cloudflare.com" alt="Español" class="flag-icon">
-            </a>
-            <!-- Catalan Flag -->
-            <a href="/ca/" title="Català">
-                <img src="https://cloudflare.com" alt="Català" class="flag-icon">
-            </a>
-            <!-- English Flag -->
-            <a href="/" title="English">
-                <img src="https://cloudflare.com" alt="English" class="flag-icon">
-            </a>
+            <a href="/" class="active" title="Català">Català</a>
+            <a href="/es/" title="Español">Castellano</a>
+            <a href="/en/" title="English">English</a>
         </div>
     </header>
 
     <!-- Main Defined Visual Window Area -->
     <main class="frame-container">
         <!-- Visual Loops inside boundary -->
-        <ul class="slideshow">
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+        <div class="slideshow">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <div class="frame-overlay"></div>
 
-        <!-- Interactive Core Buttons Split over Center -->
+        <!-- Interactive Core Buttons (Default Language Is Now Catalan) -->
         <div class="button-group">
-            <a href="story.html" class="btn">Our Story</a>
-            <a href="contact.html" class="btn">Contact</a>
+            <a href="historia.html" class="btn">La Nostra Història</a>
+            <a href="contacte.html" class="btn">Contacte</a>
         </div>
     </main>
 
