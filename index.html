@@ -50,7 +50,7 @@
             border-bottom: 2px solid transparent;
         }
 
-        /* Highlight Catalan as the primary active language style */
+        /* Active Language Status Indicator (Catalan Default) */
         .language-selector a.active {
             color: #000000;
             border-color: #000000;
@@ -82,25 +82,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            list-style: none;
             z-index: 1;
         }
 
+        /* TARGET CORRECTION: Now targets div blocks inside the wrapper */
         .slideshow div {
             position: absolute;
             width: 100%;
             height: 100%;
             top: 0;
             left: 0;
-            /* Changed from 'cover' to 'contain' to stop extreme zooming on mismatched dimensions */
-            background-size: contain; 
+            background-size: contain; /* Prevents zooming and respects original dimensions */
             background-position: center;
             background-repeat: no-repeat;
             opacity: 0;
             animation: imageAnimation 18s linear infinite;
         }
 
-        /* Pointing to your uploaded files */
+        /* Pointing to your main repository files precisely */
         .slideshow div:nth-child(1) { background-image: url('bg1.jpg'); animation-delay: 0s; }
         .slideshow div:nth-child(2) { background-image: url('bg2.jpg'); animation-delay: 6s; }
         .slideshow div:nth-child(3) { background-image: url('bg3.jpg'); animation-delay: 12s; }
@@ -113,14 +112,14 @@
             100% { opacity: 0; }
         }
 
-        /* Subtle overlay to retain deep clarity behind button text paths */
+        /* Light layer protecting foreground text button readability */
         .frame-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.08);
+            background: rgba(0, 0, 0, 0.04);
             z-index: 2;
         }
 
@@ -184,7 +183,7 @@
 </head>
 <body>
 
-    <!-- Top Left Header Layer (Clean Minimal Text Language Toggles) -->
+    <!-- Top Left Header Layer (Text Language Alternatives) -->
     <header>
         <div class="language-selector">
             <a href="/" class="active" title="Català">Català</a>
@@ -195,7 +194,7 @@
 
     <!-- Main Defined Visual Window Area -->
     <main class="frame-container">
-        <!-- Visual Loops inside boundary -->
+        <!-- Visual Slideshow Elements -->
         <div class="slideshow">
             <div></div>
             <div></div>
@@ -203,7 +202,7 @@
         </div>
         <div class="frame-overlay"></div>
 
-        <!-- Interactive Core Buttons (Default Language Is Now Catalan) -->
+        <!-- Central Nav Links in Catalan -->
         <div class="button-group">
             <a href="historia.html" class="btn">La Nostra Història</a>
             <a href="contacte.html" class="btn">Contacte</a>
