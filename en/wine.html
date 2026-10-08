@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wine | Terraballant</title>
+    <link href="https://googleapis.com" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; align-items: center; overflow-x: hidden; }
         header { width: 100%; max-width: 1200px; padding: 40px 20px 20px 20px; display: flex; justify-content: flex-start; align-items: center; z-index: 10; }
-        .language-selector { display: flex; gap: 20px; }
-        .language-selector a { color: #94a3b8; text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s, border-color 0.2s; padding-bottom: 2px; border-bottom: 2px solid transparent; }
-        .language-selector a.active { color: #000000; border-color: #000000; }
-        .language-selector a:hover { color: #475569; }
+        .home-link { color: #000000; text-decoration: none; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 2px solid #000000; padding-bottom: 2px; }
+        .home-link:hover { color: #475569; border-color: #475569; }
         .frame-container { width: 90%; max-width: 1100px; min-height: 60vh; position: relative; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); background-color: #f8fafc; padding: 50px 40px; border: 1px solid #f1f5f9; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .page-title { font-size: 1.8rem; font-weight: 700; color: #0f172a; margin-bottom: 40px; letter-spacing: -0.02em; text-transform: uppercase; }
+        .page-title { font-family: 'Amatic SC', cursive; font-size: 3.5rem; font-weight: 700; color: #0f172a; margin-bottom: 30px; letter-spacing: 0.08em; text-transform: uppercase; }
         .wine-grid { display: flex; justify-content: center; width: 100%; }
         .wine-card { background: #ffffff; border-radius: 8px; padding: 40px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 350px; width: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
         .wine-bottle-img { width: auto; height: 280px; object-fit: contain; margin-bottom: 25px; }
@@ -22,22 +21,17 @@
         footer { width: 100%; padding: 40px 20px; text-align: center; z-index: 10; }
         .instagram-link { color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; transition: color 0.2s; }
         .instagram-link:hover { color: #000000; }
-        @media (max-width: 600px) { .frame-container { width: 95%; padding: 30px 20px; } header { justify-content: center; padding-top: 25px; } }
+        @media (max-width: 600px) { .frame-container { width: 95%; padding: 30px 20px; } .page-title { font-size: 2.5rem; } header { justify-content: center; padding-top: 25px; } }
     </style>
 </head>
 <body>
     <header>
-        <div class="language-selector">
-            <a href="../vi.html" title="Català">Català</a>
-            <a href="../es/vino.html" title="Español">Castellano</a>
-            <a href="wine.html" class="active" title="English">English</a>
-        </div>
+        <a href="../" class="home-link">Home</a>
     </header>
     <main class="frame-container">
         <h1 class="page-title">Our Wines</h1>
         <div class="wine-grid">
             <div class="wine-card">
-                <!-- Uses '../' to look outside the en/ folder for tn25.jpg -->
                 <img src="../tn25.jpg" alt="Terra Ballant 100% Trepat Negre" class="wine-bottle-img">
                 <h3 class="wine-name">100% Trepat Negre</h3>
                 <span class="wine-price">€8</span>
@@ -49,4 +43,5 @@
     </footer>
 </body>
 </html>
+
 

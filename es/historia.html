@@ -9,9 +9,8 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; align-items: center; overflow-x: hidden; }
         header { width: 100%; max-width: 1200px; padding: 40px 20px 20px 20px; display: flex; justify-content: flex-start; align-items: center; z-index: 10; }
-        .language-selector { display: flex; gap: 20px; }
-        .language-selector a { color: #94a3b8; text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; padding-bottom: 2px; border-bottom: 2px solid transparent; }
-        .language-selector a.active { color: #000000; border-color: #000000; }
+        .home-link { color: #000000; text-decoration: none; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 2px solid #000000; padding-bottom: 2px; }
+        .home-link:hover { color: #475569; border-color: #475569; }
         .frame-container { width: 90%; max-width: 1100px; min-height: 60vh; position: relative; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); background-color: #f8fafc; padding: 60px 40px; border: 1px solid #f1f5f9; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .brand-title { font-family: 'Amatic SC', cursive; font-size: 3.5rem; font-weight: 700; color: #0f172a; margin-bottom: 30px; letter-spacing: 0.05em; text-transform: uppercase; }
         .story-text { max-width: 650px; font-size: 1.1rem; color: #475569; line-height: 1.7; text-align: justify; }
@@ -24,17 +23,13 @@
 </head>
 <body>
     <header>
-        <div class="language-selector">
-            <a href="../" title="Català">Català</a>
-            <a href="historia.html" class="active" title="Español">Castellano</a>
-            <a href="../en/story.html" title="English">English</a>
-        </div>
+        <a href="../" class="home-link">Inicio</a>
     </header>
     <main class="frame-container">
         <h1 class="brand-title">Nuestra Historia</h1>
         <div class="story-text">
             <p>Original de Nueva Zelanda, Sam se trasladó a Australia nada más terminar los estudios, donde rápidamente descubrió su pasión por el vino mientras trabajaba en el sector de la restauración. A través de puestos en tiendas especializadas y como sumiller, tuvo la oportunidad de experimentar vinos de todo el mundo, conocer a muchos viticultores y visitar numerosas bodegas. En 2015 realizó su primera vendimia, y durante los años siguientes trabajó en diferentes bodegas, experimentando tanto grandes como pequeñas producciones.</p>
-            <p>Con ganas de aprender más sobre el cultivo de la vid, regresó a Nueva Zelanda en 2018, donde trabajó directamente en el viñedo y en la bodega. En 2022, Sam y su joven familia se trasladaron a Cataluña. Se enamoró instantáneamente de las variedades antiguas, de la historia de la tierra y de los vinos que allí se elaboran, especialmente del Trepat. Actualmente, Sam elabora vino y trabaja el viñedo en el pueblo de Solivella, situado en el extremo occidental de la cuenca que define la DO Conca de Barberà.</p>
+            <p>Con ganas de aprender más sobre el cultivo de la vid, regresó a Nueva Zelanda en 2018, donde trabajó directamente en el viñedo y en la bodega. En 2022, Sam y su joven familia se trasladaron a Cataluña. Se enamoró instantáneamente de las variedades antiguas, de la historia de la tierra y de los vinos que allí se elaboran, especialmente del Trepat. Actualmente, Sam y trabaja el viñedo en el pueblo de Solivella, situado en el extremo occidental de la cuenca que define la DO Conca de Barberà.</p>
         </div>
     </main>
     <footer>
@@ -42,4 +37,5 @@
     </footer>
 </body>
 </html>
+
 
