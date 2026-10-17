@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vi | Terraballant</title>
+    <title>Wine | Terraballant</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -13,28 +13,16 @@
         .home-link:hover { color: #475569; border-color: #475569; }
         .frame-container { width: 90%; max-width: 1100px; min-height: 60vh; position: relative; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); background-color: #f8fafc; padding: 50px 40px; border: 1px solid #f1f5f9; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .page-title { font-family: 'Amatic SC', cursive; font-size: 3.5rem; font-weight: 700; color: #0f172a; margin-bottom: 40px; letter-spacing: 0.08em; text-transform: uppercase; }
-        
         .wine-grid { display: flex; justify-content: center; width: 100%; }
-        
-        /* --- Interactive Container for Hover Effects --- */
         .wine-card { background: #ffffff; border-radius: 8px; padding: 40px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 350px; width: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-        
         .bottle-wrapper { position: relative; width: 100%; height: 280px; margin-bottom: 25px; cursor: pointer; border-radius: 6px; overflow: hidden; }
-        
         .wine-bottle-img { width: auto; height: 100%; object-fit: contain; transition: opacity 0.3s ease; }
-        
-        /* Smooth overlay that appears on mouse hover */
         .bottle-hover-card { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.96); padding: 20px; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; z-index: 5; }
-        
         .hover-notes { font-size: 0.95rem; color: #334155; line-height: 1.6; text-align: justify; font-weight: 450; }
-        
-        /* Triggers the opacity change and text layout fade-in simultaneously */
         .bottle-wrapper:hover .wine-bottle-img { opacity: 0.15; }
         .bottle-wrapper:hover .bottle-hover-card { opacity: 1; }
-        
         .wine-name { font-size: 1.4rem; font-weight: 700; color: #1e293b; margin-bottom: 6px; }
         .wine-price { font-size: 1.25rem; font-weight: 600; color: #0f172a; }
-        
         footer { width: 100%; padding: 40px 20px; text-align: center; z-index: 10; }
         .instagram-link { color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; transition: color 0.2s; }
         .instagram-link:hover { color: #000000; }
@@ -43,16 +31,16 @@
 </head>
 <body>
     <header>
-        <a href="index.html" class="home-link">Inici</a>
+        <a href="../" class="home-link">Home</a>
     </header>
     <main class="frame-container">
-        <h1 class="page-title">Els Nostres Vins</h1>
+        <h1 class="page-title">Our Wines</h1>
         <div class="wine-grid">
             <div class="wine-card">
                 <div class="bottle-wrapper">
-                    <img src="tn25.jpg" alt="Terra Ballant 100% Trepat Negre" class="wine-bottle-img">
+                    <img src="../tn25.jpg" alt="Terra Ballant 100% Trepat Negre" class="wine-bottle-img">
                     <div class="bottle-hover-card">
-                        <p class="hover-notes">Una expressió remarcadament lleugera i bonica, amb un nas molt expressiu de pètals de flors fresques, cirera i canyella. El paladar és vibrant i enèrgic, guiat per una acidesa vivaç, grosella vermella i pruna, tot embolicat en una textura delicada i sedosa.</p>
+                        <p class="hover-notes">A remarkably light and pretty expression featuring an expressive nose of fresh flower petals, cherry, and warm baking spice. The palate is vibrant and energetic, driven by bright acidity, red currant, and plum, all wrapped in a delicate, silky texture.</p>
                     </div>
                 </div>
                 <h3 class="wine-name">100% Trepat Negre</h3>
@@ -65,4 +53,3 @@
     </footer>
 </body>
 </html>
-
