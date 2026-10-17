@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitxa Tècnica | Terraballant</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; align-items: center; overflow-x: hidden; }
+        header { width: 100%; max-width: 1200px; padding: 40px 20px 20px 20px; display: flex; justify-content: flex-start; align-items: center; z-index: 10; }
+        .back-link { color: #000000; text-decoration: none; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 2px solid #000000; padding-bottom: 2px; }
+        .back-link:hover { color: #475569; border-color: #475569; }
+        
+        .frame-container { width: 90%; max-width: 800px; min-height: 60vh; position: relative; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); background-color: #f8fafc; padding: 50px 40px; border: 1px solid #f1f5f9; display: flex; flex-direction: column; align-items: center; }
+        .page-title { font-family: 'Amatic SC', cursive; font-size: 3.5rem; font-weight: 700; color: #0f172a; margin-bottom: 10px; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; }
+        .wine-subtitle { font-size: 1.1rem; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 40px; text-align: center; }
+        
+        .tech-section-title { width: 100%; max-width: 550px; font-size: 0.9rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em; margin: 20px 0 10px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 5px; }
+        .tech-list { width: 100%; max-width: 550px; display: flex; flex-direction: column; gap: 14px; margin-bottom: 15px; }
+        .tech-row { display: flex; justify-content: space-between; padding-bottom: 8px; font-size: 1rem; }
+        .tech-label { font-weight: 600; color: #64748b; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; padding-top: 2px; }
+        .tech-value { color: #0f172a; text-align: right; font-weight: 500; max-width: 65%; }
+        
+        footer { width: 100%; padding: 40px 20px; text-align: center; z-index: 10; }
+        .instagram-link { color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; transition: color 0.2s; }
+        .instagram-link:hover { color: #000000; }
+        @media (max-width: 600px) { .frame-container { width: 95%; padding: 40px 20px; } .page-title { font-size: 2.5rem; } header { justify-content: center; padding-top: 25px; } .tech-row { flex-direction: column; gap: 2px; text-align: left; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9; } .tech-value { text-align: left; max-width: 100%; } .tech-section-title { margin-top: 10px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="vi.html" class="back-link">Tornar als vins</a>
+    </header>
+    <main class="frame-container">
+        <h1 class="page-title">Fitxa Tècnica</h1>
+        <div class="wine-subtitle">100% Trepat Negre</div>
+        
+        <div class="tech-section-title">Vinya i Terrer</div>
+        <div class="tech-list">
+            <div class="tech-row"><span class="tech-label">Viticultor</span><span class="tech-value">Sam Maguire</span></div>
+            <div class="tech-row"><span class="tech-label">Zona / DO</span><span class="tech-value">DO Conca de Barberà</span></div>
+            <div class="tech-row"><span class="tech-label">Poble</span><span class="tech-value">Solivella</span></div>
+            <div class="tech-row"><span class="tech-label">Altitud</span><span class="tech-value">490 m</span></div>
+            <div class="tech-row"><span class="tech-label">Tipus de Sòl</span><span class="tech-value">Argilo-calcari</span></div>
+        </div>
+
+        <div class="tech-section-title">Vinificació i Criança</div>
+        <div class="tech-list">
+            <div class="tech-row"><span class="tech-label">Processament</span><span class="tech-value">Desrapat</span></div>
+            <div class="tech-row"><span class="tech-label">Fermentació</span><span class="tech-value">5 dies de fermentació amb 2 remuntats al dia</span></div>
+            <div class="tech-row"><span class="tech-label">Criança</span><span class="tech-value">6 mesos en barriques de roure francès de 8 anys</span></div>
+            <div class="tech-row"><span class="tech-label">Trasbals</span><span class="tech-value">Barriques trasbalsades una vegada</span></div>
+            <div class="tech-row"><span class="tech-label">Grau Alcohòlic</span><span class="tech-value">11,38% Vol.</span></div>
+        </div>
+    </main>
+    <footer>
+        <a href="https://instagram.com" target="_blank" rel="noopener" class="instagram-link">@terra_ballant</a>
+    </footer>
+</body>
+</html>
 
