@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wine | Terraballant</title>
+    <title>Vi | Terraballant</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -22,7 +22,9 @@
         .bottle-wrapper:hover .wine-bottle-img { opacity: 0.15; }
         .bottle-wrapper:hover .bottle-hover-card { opacity: 1; }
         .wine-name { font-size: 1.4rem; font-weight: 700; color: #1e293b; margin-bottom: 6px; }
-        .wine-price { font-size: 1.25rem; font-weight: 600; color: #0f172a; }
+        .wine-price { font-size: 1.25rem; font-weight: 600; color: #0f172a; margin-bottom: 20px; }
+        .tech-btn { display: inline-block; border: 1.5px solid #0f172a; color: #0f172a; background-color: transparent; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; transition: background-color 0.2s, color 0.2s; }
+        .tech-btn:hover { background-color: #0f172a; color: #ffffff; }
         footer { width: 100%; padding: 40px 20px; text-align: center; z-index: 10; }
         .instagram-link { color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; transition: color 0.2s; }
         .instagram-link:hover { color: #000000; }
@@ -31,20 +33,21 @@
 </head>
 <body>
     <header>
-        <a href="../" class="home-link">Home</a>
+        <a href="index.html" class="home-link">Inici</a>
     </header>
     <main class="frame-container">
-        <h1 class="page-title">Our Wines</h1>
+        <h1 class="page-title">Els Nostres Vins</h1>
         <div class="wine-grid">
             <div class="wine-card">
                 <div class="bottle-wrapper">
-                    <img src="../tn25.jpg" alt="Terra Ballant 100% Trepat Negre" class="wine-bottle-img">
+                    <img src="tn25.jpg" alt="Terra Ballant 100% Trepat Negre" class="wine-bottle-img">
                     <div class="bottle-hover-card">
-                        <p class="hover-notes">A remarkably light and pretty expression featuring an expressive nose of fresh flower petals, cherry, and warm baking spice. The palate is vibrant and energetic, driven by bright acidity, red currant, and plum, all wrapped in a delicate, silky texture.</p>
+                        <p class="hover-notes">Una expressió remarcadament lleugera i bonica, amb un nas molt expressiu de pètals de flors fresques, cirera i canyella. El paladar és vibrant i enèrgic, guiat per una acidesa vivaç, grosella vermella i pruna, tot embolicat en una textura delicada i sedosa.</p>
                     </div>
                 </div>
                 <h3 class="wine-name">100% Trepat Negre</h3>
                 <span class="wine-price">€8</span>
+                <a href="fitxa.html" class="tech-btn">Fitxa Tècnica</a>
             </div>
         </div>
     </main>
